@@ -35,11 +35,38 @@ function Food() {
             </div>
         </div>
     )
+    // 이벤트 처리
+    const prev=()=>setCurpage(startPage-1)
+    const next=()=>setCurpage(endPage+1)
+    const pageChange=(page)=>setCurpage(page)
+    const pageArr=[]
+    if(startPage>1){
+        pageArr.push(
+           <li><a className={"a-link"} onClick={prev}>&laquo;</a> </li>
+        )
+    }
+    for(let i=startPage;i<=endPage;i++){
+        pageArr.push(
+           <li className={i===curpage?"active":""}><a className={"a-link"}
+            onClick={()=>pageChange(i)}
+           >{i}</a> </li>
+        )
+    }
+    if(endPage<totalpage){
+        pageArr.push(
+          <li><a className={"a-link"} onClick={next}>&raquo;</a> </li>
+        )
+    }
 
     return (
         <div className="container">
             <div className="row">
                 {html}
+            </div>
+            <div className="row text-center" style={{"margin-top":"10px"}} >
+                <ul className="pagination">
+                    {pageArr}
+                </ul>
             </div>
         </div>
     )
