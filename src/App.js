@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-
+// NodeJS 설치 = npm -g install create-react-app // webstorm 시작
 function App() {
   return (
     <div className="App">
@@ -15,7 +15,7 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn React
+          React Basic!!
         </a>
       </header>
     </div>
